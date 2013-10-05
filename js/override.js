@@ -28,5 +28,3 @@ setInterval(function(){
         spiders[i].update();
     }
 },200);
-
-

@@ -37,10 +37,7 @@ L.spider = function(latlng,options){
 // Everything down here is just initialization code for our page
 // The code above could be distributed as a plugin or something
 
-var spiders = [];
 
 for(var i = 0;i<10;i++){
-    spider = new L.Spider();
-    spider.addTo(map);
-    spiders.push(spider);
+    new L.Spider().addTo(map);
 }
