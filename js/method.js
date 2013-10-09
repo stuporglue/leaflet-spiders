@@ -1,5 +1,6 @@
+// Customization Code
 // We add a new function called *crawl* to the Marker object
-L.Marker.prototype.crawl = function(){
+L.Marker.include({crawl: function(){
     // Convert to a pixel and jiggle it up to 5 pixels in any direction
     var pixel = this._map.latLngToLayerPoint(this._latlng);
     pixel.x += Math.round(Math.random()*10) - 5;
@@ -7,14 +8,13 @@ L.Marker.prototype.crawl = function(){
 
     this._latlng = this._map.layerPointToLatLng(pixel);
     this.update();
-};
+}});
 
 
-
+// Add some spiders code
 var spiders = [];
-var spider;
+var spider,lat,lng;
 var spiderIcon = new L.Icon({iconUrl:'img/spider.png'});
-var lat,lng;
 
 for(var i = 0;i<10;i++){
     lat = Math.random()*180 - 90;
@@ -24,6 +24,7 @@ for(var i = 0;i<10;i++){
     spiders.push(spider);
 }
 
+// Every 200ms make each spider crawl
 setInterval(function(){
     for(var i = 0;i<spiders.length;i++){
         spiders[i].crawl();

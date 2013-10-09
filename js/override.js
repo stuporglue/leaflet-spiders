@@ -1,19 +1,26 @@
-L.Marker.prototype._origUpdate = L.Marker.prototype.update;
-L.Marker.prototype.update = function(){
-    // Convert to a pixel and jiggle it up to 5 pixels in any direction
-    var pixel = this._map.latLngToLayerPoint(this._latlng);
-    pixel.x += Math.round(Math.random()*10) - 5;
-    pixel.y += Math.round(Math.random()*10) - 5;
+// Customization Code
+L.Marker.include({
 
-    this._latlng = this._map.layerPointToLatLng(pixel);
-    return this._origUpdate();
-};
+    // Save off the original update function so we can use it later
+    _origUpdate: L.Marker.prototype.update,
+
+    // Define our new update function
+    update: function(){
+        // Convert to a pixel and jiggle it up to 5 pixels in any direction
+        var pixel = this._map.latLngToLayerPoint(this._latlng);
+        pixel.x += Math.round(Math.random()*10) - 5;
+        pixel.y += Math.round(Math.random()*10) - 5;
+
+        this._latlng = this._map.layerPointToLatLng(pixel);
+        return this._origUpdate(); 
+    }
+});
 
 
+// Add some spiders code
 var spiders = [];
-var spider;
+var spider,lat,lng;
 var spiderIcon = new L.Icon({iconUrl:'img/spider.png'});
-var lat,lng;
 
 for(var i = 0;i<10;i++){
     lat = Math.random()*180 - 90;

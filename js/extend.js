@@ -1,5 +1,4 @@
 L.Spider = L.Marker.extend({
-
     // Anything we don't define will call up to the L.Marker object
     options: {
         icon: new L.Icon({iconUrl:'img/spider.png'})
