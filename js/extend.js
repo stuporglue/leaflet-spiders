@@ -9,11 +9,7 @@ L.Spider = L.Marker.extend({
         this._latlng = L.latLng(lat,lng);
 
         var self = this;
-        setInterval(function(){
-            self.crawl();
-        },
-        200
-        );
+        setInterval(function(){ self.crawl(); },200);
     },
     crawl: function(){
         // how tall is a pixel? Move up to 5 pixels

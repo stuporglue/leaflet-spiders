@@ -1,8 +1,7 @@
 // Add some spider code
 var spiders = [];
-var spider;
+var spider,lat,lng;
 var spiderIcon = new L.Icon({iconUrl:'img/spider.png'});
-var lat,lng;
 
 for(var i = 0;i<10;i++){
     lat = Math.random()*180 - 90;
