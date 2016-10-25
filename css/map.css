@@ -1,15 +1,28 @@
 html,body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
+
 #map {
-    height: 100%;
-    width: 100%;
+	height: 100%;
+	width: 100%;
 }
+
 #spiders{
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: white;
+	z-index: 2000;
+}
+
+#happy {
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px 120px 0;
+	box-sizing: border-box;
 }

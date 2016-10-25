@@ -33,6 +33,6 @@ L.spider = function(latlng,options){
 // The code above could be distributed as a plugin or something
 
 
-for(var i = 0;i<10;i++){
+for(var i = 0;i<20;i++){
     new L.Spider().addTo(map);
 }
